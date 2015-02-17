@@ -1,1 +1,14 @@
-var app = angular.module('store', []);
+//Wrapping your JS in a closure is a good habit!
+(function() {
+	var app = angular.module('store', []);
+
+	app.controller('StoreController', function() {
+		this.product = gem;
+	});
+
+	var gem = {
+		name: 'Dodecahedron',
+		price: 2.95,
+		description: 'This is a description'
+	}
+})();
