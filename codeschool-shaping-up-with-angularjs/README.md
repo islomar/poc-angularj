@@ -1,0 +1,1 @@
+= Example of CodeSchool training 'Shaping up with Angular.JS'=
