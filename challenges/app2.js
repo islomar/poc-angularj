@@ -7,11 +7,22 @@
 
   app.controller('PanelController', function() {
     this.tab = 1;
-    this.selectedTab = function(setTab) {
+    this.selectTab = function(setTab) {
       this.tab = setTab;
     };
     this.isSelected = function(checkTab) {
-      return this.tab == checkTab;
+      return this.tab === checkTab;
+    };
+  });
+
+  app.controller('GalleryController', function(){
+    this.current = 0;
+    this.setCurrent = function(currentValue) {
+      if (currentValue === null || currentValue === undefined) {
+        this.current = 0;
+      } else {
+        this.current = currentValue;
+      }
     };
   });
 
