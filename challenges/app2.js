@@ -17,12 +17,8 @@
 
   app.controller('GalleryController', function(){
     this.current = 0;
-    this.setCurrent = function(currentValue) {
-      if (currentValue === null || currentValue === undefined) {
-        this.current = 0;
-      } else {
-        this.current = currentValue;
-      }
+    this.setCurrent = function(newGallery) {
+      this.current = newGallery || 0;
     };
   });
 
