@@ -43,6 +43,8 @@ Binds the form element value to the property
 ng-submit
 Allows us to call a function 
 
+==Validations==
+Turn off default HTML validation
 
 == Filters ==
 Use pipe: send the result of the output of the first expression to the second expression
