@@ -2,6 +2,7 @@
 <html ng-app="gemStore">
 <head>
 	<link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
 	<script type="text/javascript" src="angular.min.js"></script>
 	<script type="text/javascript" src="app.js"></script>
 </head>
@@ -51,7 +52,7 @@
 				<blockquote ng-repeat="review in product.reviews">
 					<b>Stars: {{review.stars}}</b>
 					{{review.body}}
-					<cite class="clearfix">by: {{review.author}}</cite>
+					<cite class="clearfix">by: {{review.author}} on {{review.createdOn | date}}</cite>
 				</blockquote>
 
 				<!--  Review Form -->
