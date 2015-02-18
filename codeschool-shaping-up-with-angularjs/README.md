@@ -18,7 +18,19 @@
 * Controller is attached to (inside) our app.
 
 ## Directives
-HTML annotations that trigger JS behavior.
+* HTML annotations that trigger JS behavior.
+* It allows to write HTML that expresses the behavior of your application >> EXPRESSIVENESS!!!
+* Directives can also be used for:
+	* Expressing complex UI.
+	* Calling events and registering event handlers.
+	* Reusing common components.
+* Dash in HTML directive translates to CamelCase in JS.
+* Types of directives:
+	* Template-expanding directives are the simplest.
+		* Define a custom tag or attribute that is expanded or replaced.
+		* can include Controller logic.
+	* xxx
+
 * <b>ng-app</b><br>
   * Directive to say that that module should be run when the document loads.<br>
   * Attach the Application Module to the page
@@ -43,6 +55,12 @@ Binds the form element value to the property
 
 * <b>ng-submit</b><br>
 Allows us to call a function 
+
+* <b>ng-include</b><br>
+	* Useful to extract HTML snippets.
+	* You have to pass a variable with the name of the file to include, using single quotes.
+	* The browser makes a new AJAX request to load the snippet.
+	* It is preferable to use a custom directive.
 
 ##Validations
 Turn off default HTML validation
