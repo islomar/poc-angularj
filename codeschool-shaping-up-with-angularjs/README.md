@@ -20,8 +20,8 @@
 ## Directives
 HTML annotations that trigger JS behavior.
 * <b>ng-app</b><br>
-** Directive to say that that module should be run when the document loads.<br>
-** Attach the Application Module to the page
+  * Directive to say that that module should be run when the document loads.<br>
+  * Attach the Application Module to the page
 
 * <b>ng-controller</b><br>
 Attach a Controller function to the page
