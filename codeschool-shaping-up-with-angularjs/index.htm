@@ -6,7 +6,7 @@
 	<script type="text/javascript" src="app.js"></script>
 </head>
 <body class="list-group" ng-controller="StoreController as store">
-	
+
 	<!--  Store Header  -->
 	<header>
 		<h1 class="text-center">Flatlander Crafted Gems</h1>
@@ -51,18 +51,18 @@
 				<blockquote ng-repeat="review in product.reviews">
 					<b>Stars: {{review.stars}}</b>
 					{{review.body}}
-					<cite>by: {{review.author}}</cite>
+					<cite class="clearfix">by: {{review.author}}</cite>
 				</blockquote>
 
 				<!--  Review Form -->
 				<form name="reviewForm">
 					<!--  Live Preview -->
 					<blockquote>
-						<b>Stars: {{review.stars}}</b>
+						<b>{{review.stars}} Stars</b>
 						{{review.body}}
-						<cite>by: {{review.author}}</cite>
+						<cite class="clearfix">by: {{review.author}}</cite>
 					</blockquote>
-					
+
 					<!--  Review Form -->
 					<h4>Submit a Review</h4>
 					<fieldset class="form-group">
