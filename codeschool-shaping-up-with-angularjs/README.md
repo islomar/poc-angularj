@@ -9,6 +9,7 @@
 * https://docs.angularjs.org/guide/expression
 * It allows to insert dynamic values into your HTML.
 * How values get displayed within the page.
+* Expressions define a 2-way data binding: expressions are re-evaluated when a property changes.
 
 == Controllers ==
 * It helps us get data into the page.
@@ -18,9 +19,52 @@
 
 == Directives ==
 * HTML annotations that trigger JS behavior.
+ng-app
+Attach the Application Module to the page
 
-Module app.js:
+ng-controller
+Attach a Controller function to the page
+
+ng-show / ng-hide
+Display a section based on an Expression
+
+ng-repeat
+Repeat a section for each item in an array
+
+ng-init
+Allows to evaluate an expression in the current scope.
+
+ng-class
+Set a specific class if a boolean expression is true.
+
+
+== Filters ==
+Use pipe: send the result of the output of the first expression to the second expression
+{{ data | filter:options }}
+
+Filter examples
+* date
+* lowercase/uppercase
+* limitTo
+* orderBy:'-price'
+
+---------------------------------------------
+
+==Module app.js==
 * 'store' is the name of the app.
 * the second parameter, [], is a list of dependencies for our module.
 
 ng-app: directive to say that that module should be run when the document loads.
+
+
+==app.js==
+images: [
+	{
+		full: 'http://lorempixel.com/100/50/cats'
+		thumb: 'http://lorempixel.com/400/200/cats'
+	},
+	{
+		full: 'http://lorempixel.com/100/50/cats'
+		thumb: 'http://lorempixel.com/400/200/cats'
+	}
+]
