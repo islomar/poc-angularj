@@ -88,3 +88,9 @@ Filter examples
 
 ##Bookmark
 http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/2/video/1
+
+##Screencasts about AngularJS
+https://www.codeschool.com/screencasts/egghead-io-reusable-angular-directives
+https://www.codeschool.com/screencasts/egghead-io-flexible-angular-directives
+https://www.codeschool.com/screencasts/angularjs-part-1
+https://www.codeschool.com/screencasts/angularjs-part-2
