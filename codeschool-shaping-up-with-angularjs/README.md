@@ -18,29 +18,30 @@
 * Controller is attached to (inside) our app.
 
 ## Directives
-* HTML annotations that trigger JS behavior.
-* ng-app
-Attach the Application Module to the page
+HTML annotations that trigger JS behavior.
+* <b>ng-app</b><br>
+** Directive to say that that module should be run when the document loads.<br>
+** Attach the Application Module to the page
 
-* ng-controller
+* <b>ng-controller</b><br>
 Attach a Controller function to the page
 
-* ng-show / ng-hide
+* <b>ng-show / ng-hide</b><br>
 Display a section based on an Expression
 
-* ng-repeat
+* <b>ng-repeat</b><br>
 Repeat a section for each item in an array
 
-* ng-init
+* <b>ng-init</b><br>
 Allows to evaluate an expression in the current scope.
 
-* ng-class
+* <b>ng-class</b><br>
 Set a specific class if a boolean expression is true.
 
-* ng-model
+* <b>ng-model</b><br>
 Binds the form element value to the property
 
-* ng-submit
+* <b>ng-submit</b><br>
 Allows us to call a function 
 
 ##Validations
@@ -60,5 +61,3 @@ Filter examples
 ##Module app.js
 * 'store' is the name of the app.
 * the second parameter, [], is a list of dependencies for our module.
-
-ng-app: directive to say that that module should be run when the document loads.
