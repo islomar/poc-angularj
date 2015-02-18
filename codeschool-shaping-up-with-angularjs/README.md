@@ -20,16 +20,22 @@
 ## Directives
 * HTML annotations that trigger JS behavior.
 * It allows to write HTML that expresses the behavior of your application >> EXPRESSIVENESS!!!
+* When you're writing an AngularJS application, you should be able to understand the behavior and intent from just the HTML.
 * Directives can also be used for:
 	* Expressing complex UI.
 	* Calling events and registering event handlers.
 	* Reusing common components.
 * Dash in HTML directive translates to CamelCase in JS.
+* Do NOT use self-closing tags, some browsers don't like when using custom elements...
 * Types of directives:
 	* Template-expanding directives are the simplest.
 		* Define a custom tag or attribute that is expanded or replaced.
 		* can include Controller logic.
-	* xxx
+	* Element directives
+		* <product-title></product-title>
+	* Attribute directives
+		* <h3 product-title></h3>
+* Best practice: use Element directives for UI widgets and Attribute directives for mixin behaviors... like a tooltip.
 
 * <b>ng-app</b><br>
   * Directive to say that that module should be run when the document loads.<br>

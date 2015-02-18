@@ -16,14 +16,15 @@
 
 	<!--  Product Container  -->
 	<div class="list-group-item" ng-repeat="product in store.products">
-		<h3 ng-include="'product-title.html'">
+		<h3>
+			<product-title></product-title>
 		</h3>
 
 		<!-- Image Gallery  -->
 		<div class="gallery" ng-show="product.images.length" ng-controller="GalleryController as gallery">
 			<img ng-src="{{product.images[gallery.current]}}" />
-			<ul class="list-inline thumbs">
-				<li class="thumbnail" ng-repeat="image in product.images">
+			<ul class="list-inline img-thumbnails clearfix">
+				<li class="small-image thumbnail" ng-repeat="image in product.images">
 					<img ng-src="{{image}}" />
 				</li>
 			</ul>
@@ -37,52 +38,12 @@
 				<li ng-class="{active: panel.isSelected(3)}"><a href ng-click="panel.selectTab(3)">Reviews</a></li>
 			</ul>
 
-			<div class="panel" ng-show="panel.isSelected(1)">
-				<h4>Description</h4>
-				<p>{{product.description}}</p>
+          	<product-description ng-show="panel.isSelected(1)"></product-description>
+
+			<div class="panel" ng-show="panel.isSelected(2)" product-specs>
 			</div>
-			<div class="panel" ng-show="panel.isSelected(2)">
-				<h4>Specifications</h4>
-				<blockquote>Shine: {{product.shine}}</blockquote>
-			</div>
-			<div class="panel" ng-show="panel.isSelected(3)">
-				<h4>Reviews</h4>
-				<blockquote ng-repeat="review in product.reviews">
-					<b>Stars: {{review.stars}}</b>
-					{{review.body}}
-					<cite class="clearfix">by: {{review.author}} on {{review.createdOn | date}}</cite>
-				</blockquote>
 
-				<!--  Review Form -->
-				<form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
-					<!--  Live Preview -->
-					<blockquote>
-						<b>{{reviewCtrl.review.stars}} Stars</b>
-						{{reviewCtrl.review.body}}
-						<cite class="clearfix">by: {{reviewCtrl.review.author}}</cite>
-					</blockquote>
-
-					<!--  Review Form -->
-					<h4>Submit a Review</h4>
-					<fieldset class="form-group">
-						<select ng-model="reviewCtrl.review.stars" class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars" required>
-							<option value="">Rate the Product</option>
-						</select>
-					</fieldset>
-					<fieldset class="form-group">
-						<textarea ng-model="reviewCtrl.review.body" class="form-control" placeholder="Write a short review of the product..." title="Review" required></textarea>
-					</fieldset>
-					<fieldset class="form-group">
-						<input type="email" ng-model="reviewCtrl.review.author" class="form-control" placeholder="jimmyDean@example.org" title="Email" required/>
-					</fieldset>
-					<div>reviewForm is {{reviewForm.$valid}}</div>
-					<fieldset class="form-group">
-						<input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
-					</fieldset>
-
-				</form>
-
-			</div>
+			<product-reviews ng-show="panel.isSelected(3)"></product-reviews>
 		</section>
 
 	</div>
