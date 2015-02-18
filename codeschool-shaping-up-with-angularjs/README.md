@@ -85,3 +85,6 @@ Filter examples
 ##Module app.js
 * 'store' is the name of the app.
 * the second parameter, [], is a list of dependencies for our module.
+
+##Bookmark
+http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/2/video/1
