@@ -40,6 +40,9 @@ Set a specific class if a boolean expression is true.
 ng-model
 Binds the form element value to the property
 
+ng-submit
+Allows us to call a function 
+
 
 == Filters ==
 Use pipe: send the result of the output of the first expression to the second expression
