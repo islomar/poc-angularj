@@ -103,6 +103,8 @@ the Injector passes the Services as arguments.
 
 ##Bookmark
 http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/1/video/1
+https://developer.github.com/guides/getting-started/
+curl -i https://api.github.com/users/islomar
 
 ##Screencasts about AngularJS
 https://www.codeschool.com/screencasts/egghead-io-reusable-angular-directives
