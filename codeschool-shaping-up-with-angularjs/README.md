@@ -87,7 +87,7 @@ Filter examples
 * the second parameter, [], is a list of dependencies for our module.
 
 ##Bookmark
-http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/4/section/2/video/1
+http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/1/video/1
 
 ##Screencasts about AngularJS
 https://www.codeschool.com/screencasts/egghead-io-reusable-angular-directives
