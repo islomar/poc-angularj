@@ -1,8 +1,14 @@
 (function() {
   var app = angular.module('gemStore', ['store-products']);
 
-  app.controller('StoreController', function(){
-    this.products = gems;
+  app.controller('StoreController', '$http', function($http){
+    var store = this;
+
+    store.products = [];
+    
+    this.products = $http.get('https://github.com/islomar/poc-angularjs/tree/master/codeschool-shaping-up-with-angularjs/data/products.json').success(function(data) {
+      store.products = data;
+    });
   });
 
   app.controller('PanelController', function() {

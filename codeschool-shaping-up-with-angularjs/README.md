@@ -35,7 +35,6 @@
 		* <product-title></product-title>
 	* Attribute directives
 		* <h3 product-title></h3>
-* Best practice: use Element directives for UI widgets and Attribute directives for mixin behaviors... like a tooltip.
 
 * <b>ng-app</b><br>
   * Directive to say that that module should be run when the document loads.<br>
@@ -81,10 +80,26 @@ Filter examples
 * limitTo
 * orderBy:'-price'
 
+##Services
+* Services gives your Controller additional functionality, like:
+	* Fetching JSon data from a web service with $http
+		* It is async
+		* It returns a Promise with .success() and .error()
+		* If we ask for JSon, the result is automatically decoded into JS and arrays
+	* Logging messages to the JS console with $log
+	* Filtering an array with $filter
+* All built-in services start with dollar sign ($)
+* Dependency injection: when Angular is loaded, it creates an Injector. When Services are loaded, they register in the Injector;
+then, when the Controller loads, it asks the Injector which services it will need. When the Controller runs,
+the Injector passes the Services as arguments.
 
 ##Module app.js
 * 'store' is the name of the app.
 * the second parameter, [], is a list of dependencies for our module.
+
+## Best practices
+* use Element directives for UI widgets and Attribute directives for mixin behaviors... like a tooltip.
+* wrap the angular modules into a closure
 
 ##Bookmark
 http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/1/video/1
