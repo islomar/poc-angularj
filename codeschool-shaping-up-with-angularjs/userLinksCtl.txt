@@ -1,0 +1,65 @@
+<r:require modules="userLinksCtl"/>
+<r:script>
+
+    var user_links = {
+        url: "<g:createLink controller='userLink' action='updateUserLinks' parseRequest='true'/>",
+        links_list: [],
+        editing: false,
+        error: false,
+        error_message: "",
+        max_links_per_user: 3
+    }
+
+    <g:each in="${user_links}" var="link" status="i">
+	    user_links.links_list.push({name: "${link.name.encodeAsJavaScript()}",
+						            url: "${link.url.encodeAsJavaScript()}"});
+	</g:each>
+</r:script>
+<div class="row" ng-controller="userLinksCtrl">
+    <div class="col-md-12" style="margin-top: 1em;">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <uni:message code="widget.userProfile.yourLinks.title"/>
+                    <sec:access expression="isFullyAuthenticated()">
+                        <div class="pull-right" ng-hide="user_links.editing" ng-cloak><small><a href="" ng-click="startEdit()"><i class="fa fa-pencil"></i> <uni:message code='widget.userProfile.yourLinks.edit'/></a></small></div>
+                        <div class="pull-right" ng-show="user_links.editing" ng-cloak><small><a href="" ng-click="startEdit()"><i class="fa fa-check"></i> <uni:message code='widget.userProfile.yourLinks.done'/></a></small></div>
+                    </sec:access>
+                    <sec:access expression="!isFullyAuthenticated()">
+                        <div class="pull-right"><small><a href="" onclick="ajaxLoginModal()"><i class="fa fa-pencil"></i> <uni:message code='widget.userProfile.yourLinks.edit'/></a></small></div>
+                    </sec:access>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <ul ng-cloak ng-repeat="link in user_links.links_list" >
+                    <li>
+                        <a href="{{link.url}}" target="_blank"><span ng-bind-html="link.name|html" ng-click="navigateToUserLinkEvent()"></span></a> <i class="fa fa-times red" ng-show="user_links.editing" ng-click="removeLink($index)"></i>
+                    </li>
+                </ul>
+                <sec:access expression="isFullyAuthenticated()">
+                    <div class="editPanelModule" ng-cloak ng-show="user_links.editing">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div ng-hide="user_links.error"><small><uni:message code='widget.userProfile.yourLinks.limitMessage'/></small></div>
+                                <div ng-show="user_links.error" class="alert alert-danger" style="margin-bottom: 0; padding: 3px 8px;"><small>{{user_links.error_message}}</small></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <input type="text" class="form-control input-sm" placeholder="<uni:message code='widget.userProfile.yourLinks.addName'/>" ng-model="new_user_link_name"/>
+                            </div>
+                            <div class="col-xs-6">
+                                <input type="text" class="form-control input-sm" placeholder="<uni:message code='widget.userProfile.yourLinks.addUrl'/>" ng-model="new_user_link_url"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <button class="btn btn-success btn-sm" style="width: 100%;" ng-click="addLinkToUser(new_user_link_name, new_user_link_url);" ng-disabled="(user_links.links_list.length >= user_links.max_links_per_user)"><uni:message code='widget.userProfile.yourLinks.addButton'/></button>
+                            </div>
+                        </div>
+                    </div>
+                </sec:access>
+            </div>
+        </div>
+    </div>
+</div>
