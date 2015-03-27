@@ -122,6 +122,9 @@ http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/
 https://developer.github.com/guides/getting-started/
 curl -i https://api.github.com/users/islomar
 
+##Slides
+http://courseware.codeschool.com/shaping-up-with-angular-js/Slides/level03.pdf#page=1&zoom=auto,-14,720
+
 ##Screencasts about AngularJS
 https://www.codeschool.com/screencasts/egghead-io-reusable-angular-directives
 https://www.codeschool.com/screencasts/egghead-io-flexible-angular-directives
