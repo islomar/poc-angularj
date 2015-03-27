@@ -16,6 +16,7 @@
 * Controllers are where we define our app's behavior by defining functions and values
 * Wrapping your JS in a closure is a good habit!
 * Controller is attached to (inside) our app.
+* It is recommended to declare the attributes in the function as well (e.g. $scope) to avoid problems when minifying the javascript (see CodeSchool screencast part 1)
 
 ## Directives
 * HTML annotations that trigger JS behavior.
@@ -80,7 +81,8 @@ Filter examples
 * limitTo
 * orderBy:'-price'
 
-##Services
+##Service
+* Services are Singleton.
 * Services gives your Controller additional functionality, like:
 	* Fetching JSon data from a web service with $http
 		* It is async
@@ -88,10 +90,24 @@ Filter examples
 		* If we ask for JSon, the result is automatically decoded into JS and arrays
 	* Logging messages to the JS console with $log
 	* Filtering an array with $filter
-* All built-in services start with dollar sign ($)
+* All built-in services start with dollar sign ($), e.g. $http, $window, $location, etc.
 * Dependency injection: when Angular is loaded, it creates an Injector. When Services are loaded, they register in the Injector;
 then, when the Controller loads, it asks the Injector which services it will need. When the Controller runs,
 the Injector passes the Services as arguments.
+
+##Factory
+http://www.desarrolloweb.com/articulos/factorias-factory-angularjs.html
+* Factories are pretty much the same than Services.
+* Factories offer slightly more flexibility than services because they can return functions which can then be new'd. This follows the factory pattern from object oriented programming. A factory can be an object for creating other objects.
+* When declaring factoryName as an injectable argument you will be provided with the value that is returned by invoking the function reference passed to module.factory.
+* Factories must return something.
+* Factories return data, ideally a JS object with properties and operations.
+* Factories are instantiated only once in the application: Singleton!!!
+* Factories are a kind of service.
+* You pass the factory to the controller, injecting it. Then, the controller delegates some calls to the factory.
+* Factories can be used to:
+	* Share data between controllers.
+	* Share data between views.
 
 ##Module app.js
 * 'store' is the name of the app.
