@@ -117,10 +117,11 @@ http://www.desarrolloweb.com/articulos/factorias-factory-angularjs.html
 * use Element directives for UI widgets and Attribute directives for mixin behaviors... like a tooltip.
 * wrap the angular modules into a closure
 
-##Bookmark
-http://campus.codeschool.com/courses/shaping-up-with-angular-js/level/5/section/1/video/1
-https://developer.github.com/guides/getting-started/
-curl -i https://api.github.com/users/islomar
+##Interesting resources
+https://docs.angularjs.org/tutorial
+https://egghead.io/
+https://thinkster.io/
+http://kapeli.com/dash
 
 ##Slides
 http://courseware.codeschool.com/shaping-up-with-angular-js/Slides/level03.pdf#page=1&zoom=auto,-14,720
@@ -130,3 +131,6 @@ https://www.codeschool.com/screencasts/egghead-io-reusable-angular-directives
 https://www.codeschool.com/screencasts/egghead-io-flexible-angular-directives
 https://www.codeschool.com/screencasts/angularjs-part-1
 https://www.codeschool.com/screencasts/angularjs-part-2
+
+##MEAN tutorials
+https://thinkster.io/mean-stack-tutorial/

@@ -11,6 +11,7 @@
     });
   }]);
 
+<<<<<<< Updated upstream
 // app.controller('PanelController', function() {
 //    this.tab = 1;
 //    this.selectTab = function(setTab) {
@@ -21,6 +22,8 @@
 //    };
 //  });
 
+=======
+>>>>>>> Stashed changes
   app.controller('GalleryController', function(){
     this.current = 0;
     this.setCurrent = function(newGallery) {
@@ -37,6 +40,7 @@
     };
   });
 
+<<<<<<< Updated upstream
   app.directive("productPanels", function() {
   	return {
   		restrict: 'E',
@@ -54,4 +58,25 @@
   	};
   });
   
+=======
+  app.directive("productTabs", function() {
+    return {
+      restrict: 'E',
+      templateUrl: "product-tabs.html",
+      controller: function() {
+            this.tab = 1;
+
+            this.isSet = function(checkTab) {
+              return this.tab === checkTab;
+            };
+
+            this.setTab = function(setTab) {
+              this.tab = setTab;
+            };
+      },
+      controllerAs: 'panel'
+    };
+  });
+
+>>>>>>> Stashed changes
 })();
