@@ -51,4 +51,31 @@ Why Angular 2?
 
 
 ##Angular 2 Essentials
-TBD
+* Modules
+  * We assemble our application from Modules
+  * A module exports an asset such as a Service, Component or a shared value
+  * We use ES6 style modules for Angular 2
+* Components
+  * A component contains application logic that controls a region of the user interface that we call a view (through a template).
+* Templates: it tells Angular how to render a component
+* Metadata: we use metadata to tell Angular 2 about the objects we build,such as where to find a component's template, what directives a component will use, and which services and inputs are required by the components.
+* By convention, we usually create a main.ts, and main is the entrypoint for the application. It will contain the bootstrap for the components.
+
+###Templates
+Templates are mainly HTML with a little help from Angular. They tell Angular how to render the Component.
+ * HTML
+ * Directives, as needed
+ * Template Binding Sintax
+* Components have tempaltes which may contain other components.
+* Nested components: you have to declare which components a component is using
+
+###Components
+* You can use styleUrls with several CSS files.
+* `providers`: declare the services you need, e.g. HTTP_PROVIDERS.
+
+###Metadata
+@Component
+@Output
+@Input
+
+* Use ViewChild when a parent Component needs to access a member of a child Component.
