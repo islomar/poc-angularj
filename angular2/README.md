@@ -79,3 +79,54 @@ Templates are mainly HTML with a little help from Angular. They tell Angular how
 @Input
 
 * Use ViewChild when a parent Component needs to access a member of a child Component.
+
+##Displaying data: data binding, directives and pipes
+* See example number 16
+* Property binding uses square brackets (from Component to Template)	>> one way binding 	>> [property] = "expression"
+* Event binding uses parentheses (from Template to Component)			>> event binding 	>> (event) = statement
+* Interpolation: {{ xxx }}
+* Two way binding:		([ngModel]) = "property"
+* Angular 2's change detection is based on unidirectional data flow
+* Property binding:
+  * For attributes, use attr
+* **Pipes** allows us to tranform data for display in a Template. Similar to filters in Angular 1.
+  * Async pipe: subscribes to a Promise or an Observable, returning the latest value emitted.
+
+##Services, Dependency Injection and Component Lifecycle hooks
+* Services
+  * Example 12
+  * Angular 1: factories, services, providers, constants, values
+  * Angular 2: we just have a class
+* Dependency Injection
+  * We inject Services into Component constructors.
+  * In Angular 2, DI is hierarchical: register the Service with the injector at the parent that contains all components that require the service.
+* Lifecycle hooks
+  * See example 19.
+  * implements OnInit >> ngOnInit(){//initialize things} >> good place to initialize the data
+  * ngOnChanges
+  * ngAfterViewInit
+  * ngOnDestroy
+
+
+##Data with Http
+* Examples 20 and 21
+* We use Http to get and save data with Promises or Observables. We isolate the http calls in a shared Service.
+* What we get back from Http is an Observable.
+  * In the component which calls the Service which returns the Observable, we have to **subscribe** to the observable.
+* The Observable comes from the RxJs (Reactive JS implements the asynchronous observable pattern and is widely used in Angular 2)
+* Async pipe: it receives a Promise or an Observable as input and subscribes to the input, eventually emitting the value(s) as changes arrive.
+  * In the Component, we get the Service response to an Observable<Vehicle[]>
+  * In the template, we pipe the 'async'
+* Http with Promises (as we did in Angular 1): example 23.
+
+
+##Routes
+* Example 24-26
+* Routing allowes our application to navigate between different Components, passing parameters where needed.
+* @RouteConfig: you define the routes, path, name and component >> declared in the app.component.ts
+* Templates:
+  * <router-outlet>: is where the Component template will appear
+  * [routerLink]="linkParameters": to link to another component
+* Child Routers: A Component may define routes for other Components. This creates a series of hierarchical child routes.
+  * In the @RouteConfig, path: "/vehicles/..."  >> the three dots define a Child Router
+  * It helps the lazy loading of modules
